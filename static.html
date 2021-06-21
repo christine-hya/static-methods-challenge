@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Copy and paste the Task class and Tags class from your previous challenge
+        class Task {
+            constructor(title, description, date_created, date_due) {
+                this._title = title;
+                this._description = description;
+                this._date_created = date_created;
+                this._date_due = date_due;
+            }
+        }
+
+        class Tags extends Task {
+            constructor(title, description, date_created, date_due, tagname) {
+                super(title, description, date_created, date_due)
+                this._tagname = tagname;
+            }
+            get tagname() {
+                return this._tagname;
+            }
+
+            set tagname(newTagname) {
+                this._tagname = newTagname;
+            }
+
+            defaultTagName() {
+                this._tagname = "general";
+            }
+        }
+
+        // Below these two Classes, create a third class called 'Status' and have it extend the 'Tags' class
+        // Within your 'Status' class, create a constructor function and edit it to the following:
+        // Have it call the extended class's constructor, along with all its parameters
+        // Within the Status class, create a static method called status
+        // Within this static method:
+        // Add a parameter called 'completed'
+        // Create private variable which is set to the same name as the parameter name above
+        // Have your private variable equal to the parameter name above
+        // Have the method return the private variable declared above
+
+        
+
+        class Status extends Task {
+            constructor(title, description, date_created, date_due, tagname, completed) {
+                super(title, description, date_created, date_due, tagname)
+                this._completed = true;
+            }
+
+            static status(_completed) {
+                return _completed;
+                console.log(_completed); 
+            }
+
+        }
+        
+
+        // Using the code below, declare a variable of 'todo' and have it equal to an instantiation of the 'Status' Object
+        // Your 'todo' variable should now be equal to an object, which allows you to use concatenation on it.
+        // To avoid confusion, going forward we are going to refer to the 'todo' variable as an object
+
+
+        const todo = new Status('Head to Gym', 'Someting that I should turn into an habit', 2018 - 04 - 24, 2020 - 12 - 06, ['exercise', 'fitness', ' routines'], '');
+
+        // Using the 'todo' object declared above:
+        // Console.log the private variable 'description' from your todo object. It should display the value 'Someting that I should turn into an habit'.
+
+        console.log(todo._description);
+
+        // Console.log the static method 'status'. Does this work, if not write a comment below of why you think it doesn't work
+
+      
+        // To be safe, erase the previous code instructed above
+        // Console.log the static method within the 'Status' class and set it to true
+        // Feel free to try and console.log all your other property values declared within the 'todo' object
+        
+        console.log(todo._title);
+        console.log(todo._date_created);
+        console.log(todo._date_due);
+        console.log(todo._tagname);
+        console.log(todo._description);
+        console.log(todo._completed);
+
+        
+
+//todo.this.description;
+    </script>
+</body>
+
+</html>
